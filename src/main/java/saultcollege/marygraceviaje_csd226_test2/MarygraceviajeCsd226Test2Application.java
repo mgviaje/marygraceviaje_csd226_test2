@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
-//@SpringBootApplication
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class MarygraceviajeCsd226Test2Application {
 
