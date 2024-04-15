@@ -12,23 +12,26 @@ public class DataController {
     @Autowired
     private DataRepository dataRepository;
 
-    @GetMapping("/sample")
+    @GetMapping("/samplestring")
     public ResponseEntity<String> getStringData() {
-
-        String s="" +
-                "<form hx-post=\"/data/string\" hx-target=\"this\" hx-swap=\"outerHTML\">" +
-                "<h1></h1>" +
-                "    <div>" +
-                "        <label>Name</label>" +
-                "        <input type=\"text\" name=\"Name\" value=\"Mgrace\">" +
-                "    </div>" +
-                "    <button class=\"btn\">Submit</button>" +
-                "    <button class=\"btn\" hx-get=\"/data/string\">Cancel</button>" +
-                "</form>";
-
         Data person1 = new Data("Aya", 30);
-        return ResponseEntity.ok(s + person1);
 
+        String person="Returning the person's name as : " + person1.getName() + "<br>" + "<br> And returning the person's ID number as :";
+
+
+        return ResponseEntity.ok(person);
+
+
+    }
+
+    @GetMapping("/sampleint")
+    public ResponseEntity<Integer> getIntegerData() {
+
+        Data person2 = new Data("Aya", 30);
+
+        Integer personNum = person2.getDataKey();
+
+        return ResponseEntity.ok(personNum);
 
     }
 
