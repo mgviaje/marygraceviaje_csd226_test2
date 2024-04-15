@@ -11,7 +11,6 @@ import java.util.Arrays;
 public class DataController {
     @Autowired
     private DataRepository dataRepository;
-
     @GetMapping("/samplestring")
     public ResponseEntity<String> getStringData() {
         Data person1 = new Data("Aya", 30);
@@ -23,7 +22,6 @@ public class DataController {
 
 
     }
-
     @GetMapping("/sampleint")
     public ResponseEntity<Integer> getIntegerData() {
 
@@ -34,7 +32,6 @@ public class DataController {
         return ResponseEntity.ok(personNum);
 
     }
-
     @GetMapping("/data/int")
     public List<Data> getIntData() {
 
@@ -52,7 +49,5 @@ public class DataController {
 
         return dataRepository.findAll();
     }
-
-
 
 }
